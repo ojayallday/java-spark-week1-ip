@@ -4,9 +4,20 @@ package ke.co.safaricom;
 // then press Enter. You can now see whitespace characters in your code.
 public class Main {
     public static void main(String[] args) {
-        // Press Alt+Enter with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        String message = "";
+        int key = 0;
+        int process = 1;
+
+        Cipher cipher = new Cipher();
+        cipher.setMessage(message);
+        cipher.setKey(key);
+        if (process == 1){
+            cipher.encrypt(plainText: "" );
+        } else if (process==2) {
+            cipher.decrypt(encryptedText "");
+        }else {
+            System.out.println("Invalid process");
+        }
 
         // Press Shift+F10 or click the green arrow button in the gutter to run the code.
         for (int i = 1; i <= 5; i++) {
