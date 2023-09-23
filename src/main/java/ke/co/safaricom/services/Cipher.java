@@ -1,4 +1,4 @@
-package ke.co.safaricom;
+package ke.co.safaricom.services;
 
 public class Cipher {
     private String message;
@@ -6,8 +6,12 @@ public class Cipher {
 
     public Cipher() {
     }
-    public String encrypt(String plainText){ return "";}
-    public String decrypt(String encryptedText){ return "";}
+    public String encrypt(){
+        return "encrypt";
+    }
+    public String decrypt(){
+        return "decrypt";
+    }
 
     public String getMessage() {
         return message;
@@ -24,4 +28,5 @@ public class Cipher {
     public void setKey(int key) {
         this.key = key;
     }
+
 }

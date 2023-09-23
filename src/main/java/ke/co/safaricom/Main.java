@@ -1,5 +1,7 @@
 package ke.co.safaricom;
 
+import ke.co.safaricom.services.Cipher;
+
 import java.util.Scanner;
 
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
@@ -7,16 +9,27 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner scanner= new Scanner(System.in);
+        Cipher cipher = new Cipher();
         //message
         while (true) {
             System.out.print("Enter your message: ");
             String message = scanner.next();
+            cipher.setMessage(message);
             //process
             System.out.print("Choose your process e/d: ");
             String process = scanner.next();
             //key
             System.out.print("Select your key: ");
             int key = scanner.nextInt();
+            cipher.setKey(key);
+
+            String output = "";
+            if(process.startsWith("e")){
+                output = cipher.encrypt();
+            }else {
+               output = cipher.decrypt();
+            }
+            System.out.println("Your output message is: "+output);
             //Next step
             System.out.print("Do you want to continue? c/q: ");
             String nextStep = scanner.next();
@@ -26,9 +39,9 @@ public class Main {
             }
         }
         /*
-        Cipher cipher = new Cipher();
+
         cipher.setMessage(message);
-        cipher.setKey(key);
+
         if (process == 1){
             cipher.encrypt(plainText "" );
         } else if (process==2) {
